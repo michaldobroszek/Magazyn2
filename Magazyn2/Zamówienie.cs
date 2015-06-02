@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.Collections;
 
 namespace Magazyn2
 {
@@ -16,8 +16,10 @@ namespace Magazyn2
     {
         PolaczenieZBaza con = new PolaczenieZBaza();
 
-        List<String> listaId = new List<String>();
-        List<String> listaIlosci = new List<String>();
+        Queue listaId = new Queue();
+        Queue listaIlosci = new Queue();
+
+      
 
         public Zamówienie()
         {
@@ -130,18 +132,11 @@ namespace Magazyn2
                     cmd.Parameters.AddWithValue("@id", textId.Text);
                     cmd.ExecuteNonQuery();
 
-                    listaId.Add(textId.Text);
-                    listaIlosci.Add(textIlosc.Text);
+                    listaId.Enqueue(textId.Text);
+                    listaIlosci.Enqueue(textZamawianaIlosc.Text);
 
 
-                    foreach (String prime in listaId)// Loop with for.
-                    {
-                        foreach (String prime2 in listaIlosci)
-                        {
-                            Console.WriteLine(prime);
-                            Console.WriteLine(prime2);
-                        }
-                    }
+                  
 
                     this.textZamawianaIlosc.Text = "0";
 
@@ -202,23 +197,22 @@ namespace Magazyn2
 
             cmd.CommandText = "delete from Zamówienia where Id_Zamówienia = (Select MAX(Id_Zamówienia) from Zamówienia) ";
             cmd.ExecuteNonQuery();
-            con.dajPolaczenie().Close();
-            foreach (String prime in listaId)// Loop with for.
+           
+         
+            for (int i = 0; i < listaId.Count;i++)
             {
-                foreach (String prime2 in listaIlosci)
-                {
-                    con.dajPolaczenie().Open();
+          
 
-                    cmd.CommandText = "UPDATE Produkty SET Ilość ='"+ prime2+"' WHERE Id_Produkt = '"+ prime+"'  ;";
-              
-                    cmd.ExecuteNonQuery();
-                    con.dajPolaczenie().Close();
+                cmd.CommandText = "UPDATE Produkty SET Ilość = Ilość + '" + listaIlosci.Dequeue() + "' WHERE Id_Produkt = '" + listaId.Dequeue() + "'  ;";
+                cmd.ExecuteNonQuery();
 
-                }
+
+         
+
             }
+           
 
-            listaId.Clear();
-            listaIlosci.Clear();
+          
 
             this.Close();
 

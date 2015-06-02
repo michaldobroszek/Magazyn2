@@ -39,9 +39,11 @@ namespace Magazyn2
             con.dajPolaczenie().Open();
             cmd.CommandText = "INSERT INTO Klienci_Zamówienia(FK_Zamówienia,FK_Klienci) select MAX(Id_Zamówienia),MAX(Id_Klienta) from Zamówienia, Klienci;";
             cmd.ExecuteNonQuery();
-            Zamówienie3 zm3 = new Zamówienie3();
+           Zamówienie3 zm3 = new Zamówienie3(); 
+            
             this.Close();
             zm3.Show();
+            
             
         }
 

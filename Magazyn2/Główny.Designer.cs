@@ -52,6 +52,8 @@
             this.bUsun = new System.Windows.Forms.Button();
             this.bEdytuj = new System.Windows.Forms.Button();
             this.bZamówienie = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaMagazynDataSetBindingSource)).BeginInit();
@@ -69,7 +71,7 @@
             this.plikToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(592, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(766, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -119,7 +121,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(175, 65);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(405, 427);
+            this.dataGridView1.Size = new System.Drawing.Size(563, 427);
             this.dataGridView1.TabIndex = 3;
             // 
             // button1
@@ -210,7 +212,7 @@
             // bZamówienie
             // 
             this.bZamówienie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.bZamówienie.Location = new System.Drawing.Point(12, 202);
+            this.bZamówienie.Location = new System.Drawing.Point(14, 285);
             this.bZamówienie.Name = "bZamówienie";
             this.bZamówienie.Size = new System.Drawing.Size(120, 23);
             this.bZamówienie.TabIndex = 7;
@@ -218,11 +220,35 @@
             this.bZamówienie.UseVisualStyleBackColor = true;
             this.bZamówienie.Click += new System.EventHandler(this.bZamówienie_Click);
             // 
+            // button2
+            // 
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.Location = new System.Drawing.Point(13, 204);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Usuń Klienta";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.Location = new System.Drawing.Point(14, 245);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 23);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Usuń Zamówienie";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Główny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 521);
+            this.ClientSize = new System.Drawing.Size(766, 521);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.bZamówienie);
             this.Controls.Add(this.bEdytuj);
             this.Controls.Add(this.bUsun);
@@ -275,5 +301,7 @@
         private System.Windows.Forms.Button bUsun;
         private System.Windows.Forms.Button bEdytuj;
         private System.Windows.Forms.Button bZamówienie;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -68,7 +68,7 @@ namespace Magazyn2
                 con.dajPolaczenie().Open();
                 SqlCommand cmd = con.dajPolaczenie().CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from Klienci kl join Zamówienia zm on zm.Id_Zamówienia = kl.Id_Klienta ";
+                cmd.CommandText = "select FK_Zamówienia,FK_Klienci,Nazwa,NIP,REGON from Klienci_Zamówienia kz join Klienci kl on kl.Id_Klienta =kz.FK_Klienci; ";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -183,7 +183,21 @@ namespace Magazyn2
         {
             Zamówienie za = new Zamówienie();
             za.Show();
-            this.Close();
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UsuńKlienta uk = new UsuńKlienta();
+            uk.Show();
+          
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UsunZamowienie uzm = new UsunZamowienie();
+            uzm.Show();
+
         }
 
         

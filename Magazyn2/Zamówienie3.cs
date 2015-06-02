@@ -17,7 +17,7 @@ namespace Magazyn2
         public Zamówienie3()
         {
             InitializeComponent();
-            if (con.dajPolaczenie().State == ConnectionState.Open)
+          /*  if (con.dajPolaczenie().State == ConnectionState.Open)
             {
                 con.dajPolaczenie().Close();
             }
@@ -30,10 +30,16 @@ namespace Magazyn2
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dataGridViewKlient.DataSource = dt;
-            con.dajPolaczenie().Close();
+            con.dajPolaczenie().Close();*/
 
-
+            if (con.dajPolaczenie().State == ConnectionState.Open)
+            {
+                con.dajPolaczenie().Close();
+            }
             con.dajPolaczenie().Open();
+            SqlCommand cmd = con.dajPolaczenie().CreateCommand();
+            cmd.CommandType = CommandType.Text;
+           
             cmd.CommandText = "Select FK_Zamówienie,FK_Produkt,Nazwa,Cena_Netto,ZamawianaIlość FROM Produkty_Zamówienia pz join Produkty pr on pr.Id_Produkt = pz.FK_Produkt  where FK_Zamówienie = (select MAX(FK_Zamówienie) from Produkty_Zamówienia);  ";
             cmd.ExecuteNonQuery();
             DataTable dt2 = new DataTable();

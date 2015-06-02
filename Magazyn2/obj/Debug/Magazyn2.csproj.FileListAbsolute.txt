@@ -14,6 +14,6 @@ C:\Users\Lenovo\documents\visual studio 2013\Projects\Magazyn2\Magazyn2\obj\Debu
 C:\Users\Lenovo\documents\visual studio 2013\Projects\Magazyn2\Magazyn2\obj\Debug\Magazyn2.Zamówienie.resources
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\Magazyn2\Magazyn2\obj\Debug\Magazyn2.Zamówienie2.resources
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\Magazyn2\Magazyn2\obj\Debug\Magazyn2.Zamówienie3.resources
-C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\Magazyn2\Magazyn2\obj\Debug\RdlCompile.cache
-C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\Magazyn2\Magazyn2\obj\Debug\RdlCompile.compiled
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\Magazyn2\Magazyn2\obj\Debug\Magazyn2.Przeglądaj.resources
+C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\Magazyn2\Magazyn2\obj\Debug\Magazyn2.UsuńKlienta.resources
+C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\Magazyn2\Magazyn2\obj\Debug\Magazyn2.UsunZamowienie.resources
